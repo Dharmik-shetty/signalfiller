@@ -116,7 +116,7 @@
     <div class="container" id="main-container">
         <h1 id="title">Cosmic Trading Signal</h1>
         <form id="signalForm">
-            <textarea id="signal-input" name="signal" placeholder="Enter signal (e.g., XLMUSDT long entry: 0.25 tp: 0.27 sl: 0.24)" required></textarea>
+            <textarea id="signal-input" name="signal" placeholder="Enter signal (e.g., XLMUSDT long entry: 0.25 tp: 0.27 sl: 0.24)" required autofocus></textarea>
             <button type="submit" id="launch-button">
                 <span class="default-text" id="default-text">Launch Signal</span>
                 <span class="launch-text" id="launch-text">Launching...</span>
@@ -125,7 +125,7 @@
     </div>
 
     <script>
-        // Auto-focus the textarea when the page loads
+        // Auto-focus the textarea when the page loads (redundant with autofocus attribute, kept for reference)
         document.getElementById('signal-input').focus();
 
         document.getElementById('signalForm').addEventListener('submit', async function(event) {
@@ -152,7 +152,7 @@
                     throw new Error(`Server responded with status: ${response.status} - ${response.statusText}`);
                 }
 
-                await response.text();
+ questionnaire                await response.text();
 
                 // Switch to launched state after 1 second
                 setTimeout(() => {
